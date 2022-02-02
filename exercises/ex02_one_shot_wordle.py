@@ -1,6 +1,6 @@
 """One shot wordle for the win!"""
 
-___author___ = "730389944"
+__author__ = "730389944"
 
 
 WHITE_BOX: str = "\U00002B1C"
@@ -12,7 +12,7 @@ secret: str = "python"
 guess: str = input(f"What is your {len(secret)}-letter guess? ")
 
 while len(guess) != len(secret):
-    guess: str = input(f"What is your {len(secret)}-letter guess? ")
+    guess = input(f"That was not {len(secret)} letters! Try again: ")
 
 i: int = 0
 emoji_res: str = ""
@@ -23,7 +23,7 @@ while i < len(secret):
     else:
         char_present: bool = False
         alt_index: int = 0
-        while (char_present != True and  alt_index < len(secret)):
+        while (not char_present and alt_index < len(secret)):
             if guess[i] == secret[alt_index]:
                 char_present = True
             else:
@@ -40,4 +40,3 @@ if guess == secret:
     print("Woo! You got it!")
 else:
     print("Not quite. Play again soon!")
-
