@@ -39,7 +39,7 @@ def input_guess(length_expected: int) -> str:
     """Makes sure the user's input is the right length, and doesn't stop until it is."""
     guess: str = input(f"Enter a {length_expected} character word: ")
     while len(guess) != length_expected:
-        guess = input(f"That was not {length_expected} chars! Try again: ")
+        guess = input(f"That wasn't {length_expected} chars! Try again: ")
     return guess
 
 
